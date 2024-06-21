@@ -1,0 +1,58 @@
+
+<EmojiButton@Button>:
+    font_name: "fonts/seguiemj.ttf"
+    font_size: dp(20)
+    background_normal: ''
+
+<AddButton>:
+    font_name: "fonts/seguiemj.ttf"
+
+<Menu>:
+    orientation: "vertical"
+    padding: app.spacing_padding
+    spacing: app.spacing_padding
+    canvas.before:
+        Color:
+            rgba: app.menu_background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    EmojiButton:
+        text: "Cardiologie \U0001FAC0"
+        background_color: 0.95, 0.161, 0.06, 1
+        on_press: app.main_screen_manager.push_screen("Test")
+    EmojiButton:
+        text: "Pneumologie \U0001FAC1"
+        background_color: 0.98, 0.02, 0.48, 1
+    EmojiButton:
+        text: "Neurologie \U0001F9E0"
+        background_color: 0.702, 0.071, 0.92, 1
+    EmojiButton:
+        text: "Médecine Interne \U0001F468\u200D\u2695\U0000FE0F"
+        background_color: 0.11, 0.843, 0.91, 1
+    EmojiButton:
+        text: "Geriatrie \U0001F474"
+        background_color: 0.118, 0.922, 0.08, 1
+    EmojiButton:
+        text: "Urgences \U0001F6A8"
+        background_color: 0.894, 0.792, 0.106, 1
+    EmojiButton:
+        text: "Rhumatologie \U0001F9B4"
+        background_color: 0.567, 0.598, 0.606, 1
+    EmojiButton:
+        text: "Hépato-Gastro \U0001F4A9"
+        background_color: 0.19, 0.263, 0.796, 1
+    EmojiButton:
+        text: "Echographie \U0001F4F8"
+        background_color: 0.308, 0.751, 0.583, 1
+    EmojiButton:
+        text: "Nephrologie \U0001F4A7"
+        background_color: 0.851, 0.584, 0.16, 1
+    BoxLayout:
+        spacing: app.spacing_padding
+        AddButton:
+            text: "Ajouter un organigramme \U0001F5C3"
+            on_press: app.main_screen_manager.push_screen("AddMindMap")
+        AddButton:
+            text: "Ajouter une fiche \U0001F4CB"
+            on_press: app.main_screen_manager.push_screen("AddSheet")

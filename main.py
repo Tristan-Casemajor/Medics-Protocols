@@ -1,3 +1,5 @@
+from kivy import Config
+Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 import os
 from kivy.app import App
 from kivy.metrics import dp

@@ -1,3 +1,31 @@
+
+
 <AddMindMapLayout>:
+    orientation: "vertical"
+    padding: app.spacing_padding
+    spacing: app.spacing_padding
+    canvas.before:
+        Color:
+            rgba: app.menu_background
+        Rectangle:
+            pos: self.pos
+            size: self.size
     Label:
-    
+        size_hint: 1, None
+        height: root.height/8
+        text: "Choissisez vôtre image : "
+    Button:
+        text: "Parcourir"
+        size_hint: None, None
+        size: root.width/6, root.height/12
+        pos_hint: {"center_x": 0.5}
+        on_press: app.main_screen_manager.push_screen("SelectFile")
+    Image:
+        source: "images/icon.png"
+    Button:
+        background_normal: ''
+        background_color: 0.22, 0.839, 0.15, 1
+        text: "Ajouter"
+        size_hint: None, None
+        size: root.width/6, root.height/12
+        pos_hint: {"center_x": 0.5}

@@ -1,7 +1,7 @@
 
 <EmojiButton@Button>:
     font_name: "fonts/seguiemj.ttf"
-    font_size: dp(20)
+    font_size: dp(18)
     background_down: ''
 
 <AddButton>:
@@ -10,7 +10,7 @@
 <Menu>:
     orientation: "vertical"
     padding: app.spacing_padding
-    spacing: app.spacing_padding
+    spacing: dp(5)
     canvas.before:
         Color:
             rgba: app.menu_background
@@ -48,10 +48,19 @@
     EmojiButton:
         text: "Nephrologie \U0001F4A7"
         background_color: 0.851, 0.584, 0.16, 1
+    EmojiButton:
+        text: "Hématologie \U0001FA78"
+        background_color: 0.84, 0.17, 0.294, 1
+    EmojiButton:
+        text: "Immunologie \U0001F9A0"
+        background_color: 0.435, 0.925, 0.078, 1
+    EmojiButton:
+        text: "Pédiatrie \U0001F476"
+        background_color: 0.882, 0.03, 0.97, 1
     BoxLayout:
         spacing: app.spacing_padding
         AddButton:
-            text: "Ajouter un organigramme \U0001F5C3"
+            text: "Ajouter un algorithme \U0001F5C3"
             on_press: app.main_screen_manager.push_screen("AddMindMap")
         AddButton:
             text: "Ajouter une fiche \U0001F4CB"

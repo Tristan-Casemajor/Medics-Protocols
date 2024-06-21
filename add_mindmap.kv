@@ -1,6 +1,7 @@
-
+#:import specialty_selector specialty_selector
 
 <AddMindMapLayout>:
+    preview_image: preview_image
     orientation: "vertical"
     padding: app.spacing_padding
     spacing: app.spacing_padding
@@ -12,16 +13,23 @@
             size: self.size
     Label:
         size_hint: 1, None
-        height: root.height/8
+        height: root.height/23
         text: "Choissisez vôtre image : "
     Button:
         text: "Parcourir"
         size_hint: None, None
-        size: root.width/6, root.height/12
+        size: root.width/5.5, root.height/13
         pos_hint: {"center_x": 0.5}
         on_press: app.main_screen_manager.push_screen("SelectFile")
-    Image:
+    PreviewImage:
+        id: preview_image
         source: "images/icon.png"
+
+    SpecialitySelector:
+        size_hint: None, 0.3
+        width: dp(160)
+        pos_hint: {"center_x":0.5}
+
     Button:
         background_normal: ''
         background_color: 0.22, 0.839, 0.15, 1

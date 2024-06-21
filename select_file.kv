@@ -1,4 +1,5 @@
 <SelectFileLayout>:
+    current_app: app
     canvas.before:
         Color:
             rgba: app.menu_background
@@ -9,9 +10,11 @@
     spacing: app.spacing_padding
     orientation: "vertical"
     FileChooserIconView:
+        id: file_chooser
         path: "."
     Button:
         size_hint: None, None
         size: root.width/4, root.height/12
         text: "séléctionner"
+        on_press: root.set_image(file_chooser.selection)
         pos_hint: {"center_x": 0.5}

@@ -1,0 +1,77 @@
+<LayoutTextCheckBox>:
+    size_hint: 1, None
+    height: dp(27)
+
+<LabelChoice@Label>:
+    size_hint: None, 1
+    size_hint: None, 1
+    width: dp(120)
+
+
+<CheckBoxChoice@CheckBox>:
+    size_hint: None, 1
+    width: dp(25)
+    #pos_hint: {"right":1}
+
+<LayoutStackChoices>:
+    size_hint: 1, None
+    height: dp(330)
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Cardiologie"
+        CheckBoxChoice:
+            id: cardiologie
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Pneumologie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Médecine Interne"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Geriatrie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Urgences"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Rhumatologie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Hépato-Gastro"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Echographie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Nephrologie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Hématologie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Immunologie"
+        CheckBoxChoice:
+    LayoutTextCheckBox:
+        LabelChoice:
+            text: "Pédiatrie"
+        CheckBoxChoice:
+
+<SpecialitySelector>:
+    canvas.before:
+        Color:
+            rgba: 0.13, 0.15, 0.166, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    do_scroll_y: True
+    LayoutStackChoices:

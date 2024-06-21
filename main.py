@@ -1,18 +1,20 @@
 from kivy import Config
+from kivy.uix.screenmanager import Screen
+
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 import os
 from kivy.app import App
 from kivy.metrics import dp
 from kivy.properties import NumericProperty, ColorProperty, ObjectProperty
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy import platform
 from navigation import NavigationScreenManager
 
 
 class MainScreenManager(NavigationScreenManager):
     pass
 
+
+class ScreenObjectProperty(Screen):
+    layout = ObjectProperty(None)
 
 class MedicsProtocols(App):
     spacing_padding = NumericProperty(dp(10))

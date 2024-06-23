@@ -26,6 +26,7 @@
         source: "images/icon.png"
 
     SpecialitySelector:
+        id: speciality_selector
         size_hint: None, 0.3
         width: dp(160)
         pos_hint: {"center_x":0.5}
@@ -37,3 +38,4 @@
         size_hint: None, None
         size: root.width/6, root.height/12
         pos_hint: {"center_x": 0.5}
+        on_press: root.save_mind_map(preview_image.source, speciality_selector.layout_stack.choice)

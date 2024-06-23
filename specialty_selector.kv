@@ -11,7 +11,6 @@
 <CheckBoxChoice@CheckBox>:
     size_hint: None, 1
     width: dp(25)
-    #pos_hint: {"right":1}
 
 <LayoutStackChoices>:
     size_hint: 1, None
@@ -21,52 +20,99 @@
             text: "Cardiologie"
         CheckBoxChoice:
             id: cardiologie
+            name: "cardiologie"
+            on_state: root.protect_selection(self, pneumologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Pneumologie"
         CheckBoxChoice:
+            id: pneumologie
+            name: "pneumologie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Médecine Interne"
         CheckBoxChoice:
+            id: medecine_interne
+            name: "medecine_interne"
+            on_state: root.protect_selection(self, cardiologie, pneumologie, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Geriatrie"
         CheckBoxChoice:
+            id: geriatrie
+            name: "geriatrie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, pneumologie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Urgences"
         CheckBoxChoice:
+            id: urgences
+            name: "urgences"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, pneumologie, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Rhumatologie"
         CheckBoxChoice:
+            id: rhumatologie
+            name: "rhumatologie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, pneumologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Hépato-Gastro"
         CheckBoxChoice:
+            id: hepato_gastro
+            name: "hepato_gastro"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, pneumologie, echographie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Echographie"
         CheckBoxChoice:
+            id: echographie
+            name: "echographie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, pneumologie, nephrologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Nephrologie"
         CheckBoxChoice:
+            id: nephrologie
+            name: "nephrologie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, pneumologie, hematologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Hématologie"
         CheckBoxChoice:
+            id: hematologie
+            name: "hematologie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, pneumologie, immunologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Immunologie"
         CheckBoxChoice:
+            id: immunologie
+            name: "immunologie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, pneumologie, pediatrie)
+
     LayoutTextCheckBox:
         LabelChoice:
             text: "Pédiatrie"
         CheckBoxChoice:
+            id: pediatrie
+            name: "pediatrie"
+            on_state: root.protect_selection(self, cardiologie, medecine_interne, geriatrie, urgences, rhumatologie, hepato_gastro, echographie, nephrologie, hematologie, immunologie, pneumologie)
 
 <SpecialitySelector>:
+    layout_stack: layout_stack_choices
     canvas.before:
         Color:
             rgba: 0.13, 0.15, 0.166, 1
@@ -75,3 +121,4 @@
             size: self.size
     do_scroll_y: True
     LayoutStackChoices:
+        id: layout_stack_choices

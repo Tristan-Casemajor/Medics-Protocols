@@ -1,3 +1,5 @@
+import os
+import shutil
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.image import Image
@@ -9,4 +11,6 @@ class PreviewImage(Image):
     pass
 
 class AddMindMapLayout(BoxLayout):
-    pass
+    def save_mind_map(self, source, destination):
+        if source != "images/icon.png" and os.path.exists(source):
+            shutil.copy2(source, destination)

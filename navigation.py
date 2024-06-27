@@ -1,17 +1,24 @@
+from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import ScreenManager
+from kivy.lang import Builder
+
+Builder.load_file("navigation.kv")
 
 
 class NavigationScreenManager(ScreenManager):
     screen_stack = []
+    current_app = ObjectProperty(None)
 
-    def push_screen(self, screen_name):
+    def push_screen(self, screen_name, catalog_name="", dir_name="", back_color=()):
         self.screen_stack.append(self.current)
         self.transition.direction = "left"
         self.current = screen_name
-        print(self.screen_stack)
+        if catalog_name and dir_name:
+            self.current_app.main_screen_manager.get_screen("Catalog").catalog_name = catalog_name
+            self.current_app.main_screen_manager.get_screen("Catalog").back_color = back_color
+            self.current_app.main_screen_manager.get_screen("Catalog").scroll.catalog_layout.update_widgets(dir_name)
 
     def pop_screen(self):
-        print(self.screen_stack)
         if self.screen_stack:  # Check if the stack is not empty
             screen_name = self.screen_stack[-1]
             self.transition.direction = "right"
@@ -20,4 +27,3 @@ class NavigationScreenManager(ScreenManager):
 
         else:
             print("Screen stack is empty. Cannot pop.")
-        print(self.screen_stack)

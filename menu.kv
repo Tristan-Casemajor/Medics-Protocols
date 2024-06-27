@@ -1,8 +1,10 @@
 
 <EmojiButton@Button>:
+    dir_name: self.dir_name
     font_name: "fonts/seguiemj.ttf"
     font_size: dp(18)
     background_down: ''
+    on_press: app.main_screen_manager.push_screen("Catalog", self.text, self.dir_name, self.background_color)
 
 <AddButton>:
     font_name: "fonts/seguiemj.ttf"
@@ -18,43 +20,55 @@
             pos: self.pos
             size: self.size
     EmojiButton:
+        dir_name: "cardiologie"
         text: "Cardiologie \U0001FAC0"
         background_color: 0.95, 0.161, 0.06, 1
-        on_press: app.main_screen_manager.push_screen("Test")
     EmojiButton:
+        dir_name: "pneumologie"
         text: "Pneumologie \U0001FAC1"
         background_color: 0.98, 0.02, 0.48, 1
     EmojiButton:
+        dir_name: "neurologie"
         text: "Neurologie \U0001F9E0"
         background_color: 0.702, 0.071, 0.92, 1
     EmojiButton:
+        dir_name: "medecine_interne"
         text: "Médecine Interne \U0001F468\u200D\u2695\U0000FE0F"
         background_color: 0.11, 0.843, 0.91, 1
     EmojiButton:
+        dir_name: "geriatrie"
         text: "Geriatrie \U0001F474"
         background_color: 0.118, 0.922, 0.08, 1
     EmojiButton:
+        dir_name: "urgences"
         text: "Urgences \U0001F6A8"
         background_color: 0.894, 0.792, 0.106, 1
     EmojiButton:
+        dir_name: "rhumatologie"
         text: "Rhumatologie \U0001F9B4"
         background_color: 0.567, 0.598, 0.606, 1
     EmojiButton:
+        dir_name: "hepato_gastro"
         text: "Hépato-Gastro \U0001F4A9"
         background_color: 0.19, 0.263, 0.796, 1
     EmojiButton:
+        dir_name: "echographie"
         text: "Echographie \U0001F4F8"
         background_color: 0.308, 0.751, 0.583, 1
     EmojiButton:
+        dir_name: "nephrologie"
         text: "Nephrologie \U0001F4A7"
         background_color: 0.851, 0.584, 0.16, 1
     EmojiButton:
+        dir_name: "hematologie"
         text: "Hématologie \U0001FA78"
         background_color: 0.84, 0.17, 0.294, 1
     EmojiButton:
+        dir_name: "immunologie"
         text: "Immunologie \U0001F9A0"
         background_color: 0.435, 0.925, 0.078, 1
     EmojiButton:
+        dir_name: "pediatrie"
         text: "Pédiatrie \U0001F476"
         background_color: 0.882, 0.03, 0.97, 1
     BoxLayout:

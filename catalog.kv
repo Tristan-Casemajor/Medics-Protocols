@@ -1,0 +1,32 @@
+
+<Catalog>:
+    orientation: "vertical"
+    catalog_layout: catalog_layout
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: 0, 0, 0, 0.3
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        font_name: "fonts/seguiemj.ttf"
+        text: root.catalog_name
+        font_size: dp(35)
+        size_hint: 1, None
+        height: dp(70)
+    ScrollView:
+        do_scroll_y: True
+
+        CatalogLayout:
+            padding: app.spacing_padding
+            spacing: app.spacing_padding
+            size_hint: 1, None
+            height : self.minimum_height
+            orientation: "vertical"
+            id: catalog_layout
+

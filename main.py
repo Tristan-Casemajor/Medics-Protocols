@@ -9,7 +9,7 @@ from kivy.uix.screenmanager import Screen
 import os
 from kivy.app import App
 from kivy.metrics import dp
-from kivy.properties import NumericProperty, ColorProperty, ObjectProperty
+from kivy.properties import NumericProperty, ColorProperty, ObjectProperty, StringProperty
 from navigation import NavigationScreenManager
 
 
@@ -19,6 +19,15 @@ class MainScreenManager(NavigationScreenManager):
 
 class ScreenObjectProperty(Screen):
     layout = ObjectProperty(None)
+
+class SheetViewerScreen(Screen):
+    pass
+
+class CatalogScreen(Screen):
+    catalog_name = StringProperty("")
+    back_color = ColorProperty()
+    scroll = ObjectProperty(None)
+
 
 class MedicsProtocols(App):
     spacing_padding = NumericProperty(dp(10))
@@ -35,7 +44,9 @@ class MedicsProtocols(App):
                    os.path.join("choices", "nephrologie"),
                    os.path.join("choices", "pediatrie"),
                    os.path.join("choices", "rhumatologie"),
-                   os.path.join("choices", "urgences"),)
+                   os.path.join("choices", "urgences"),
+                   os.path.join("choices", "neurologie"))
+
     def build(self):
         self.icon = "images/icon.png"
         self.main_screen_manager = MainScreenManager()

@@ -9,7 +9,7 @@ class NavigationScreenManager(ScreenManager):
     screen_stack = []
     current_app = ObjectProperty(None)
 
-    def push_screen(self, screen_name, catalog_name="", dir_name="", back_color=()):
+    def push_screen(self, screen_name, catalog_name="", dir_name="", back_color=(), path_to_file=""):
         self.screen_stack.append(self.current)
         self.transition.direction = "left"
         self.current = screen_name
@@ -17,6 +17,8 @@ class NavigationScreenManager(ScreenManager):
             self.current_app.main_screen_manager.get_screen("Catalog").catalog_name = catalog_name
             self.current_app.main_screen_manager.get_screen("Catalog").back_color = back_color
             self.current_app.main_screen_manager.get_screen("Catalog").scroll.catalog_layout.update_widgets(dir_name)
+        elif path_to_file:
+            self.current_app.main_screen_manager.get_screen("SheetViewer").sheet_viewer.viewer_label.update_text(path_to_file)
 
     def pop_screen(self):
         if self.screen_stack:  # Check if the stack is not empty

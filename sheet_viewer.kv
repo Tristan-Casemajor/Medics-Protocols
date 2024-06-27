@@ -1,0 +1,21 @@
+<ViewerLabel>:
+    size_hint: None, None
+    size: self.texture_size
+    font_size: dp(20)
+    markup: True
+
+<ScrollSheetViewer>:
+    canvas.before:
+        Color:
+            rgba: app.menu_background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    viewer_label: viewer_label
+    do_scroll_y: True
+    BoxLayout:
+        paddding: app.spacing_padding
+        size_hint: None, None
+        size: self.minimum_size
+        ViewerLabel:
+            id: viewer_label

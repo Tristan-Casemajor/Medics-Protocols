@@ -20,8 +20,10 @@ class MainScreenManager(NavigationScreenManager):
 class ScreenObjectProperty(Screen):
     layout = ObjectProperty(None)
 
+
 class SheetViewerScreen(Screen):
-    pass
+    sheet_viewer = ObjectProperty(None)
+
 
 class CatalogScreen(Screen):
     catalog_name = StringProperty("")
@@ -58,5 +60,6 @@ class MedicsProtocols(App):
         for folder in self.app_folders:
             if not os.path.exists(folder):
                 os.mkdir(folder)
+
 
 MedicsProtocols().run()

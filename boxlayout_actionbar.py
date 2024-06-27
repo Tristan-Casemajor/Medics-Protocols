@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 
 Builder.load_file("boxlayout_actionbar.kv")
 
+
 class ButtonWithImageAtCenter(Button):
     image_source = StringProperty("")
 

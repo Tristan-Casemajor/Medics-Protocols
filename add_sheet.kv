@@ -5,6 +5,8 @@
     orientation: "vertical"
     padding: app.spacing_padding
     spacing: app.spacing_padding
+    text_input_sheet: text_input_sheet
+    confirm_label: confirm
     canvas.before:
         Color:
             rgba: app.menu_background
@@ -34,9 +36,9 @@
         text: "Entrer la fiche manuellement : "
 
     TextInput:
-        size_hint: 0.6, None
+        id: text_input_sheet
+        size_hint: 0.7, 0.55
         pos_hint: {"center_x": 0.5}
-        height: dp(250)
         cursor_color: 0, 0, 0, 1
 
     SpecialitySelector:
@@ -45,6 +47,17 @@
         width: dp(160)
         pos_hint: {"center_x":0.5}
 
+    BoxLayout:
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5}
+        size: dp(300), dp(27)
+        Label:
+            text: "Nom de la fiche : "
+        TextInput:
+            size_hint: 1.8, 1
+            id: sheet_name
+            cursor_color: 0, 0, 0, 1
+            multiline: False
     Button:
         background_normal: ''
         background_color: 0.22, 0.839, 0.15, 1
@@ -52,5 +65,11 @@
         size_hint: None, None
         size: root.width/6, root.height/12
         pos_hint: {"center_x": 0.5}
+        on_press: root.save_sheet(sheet_name.text, text_input_sheet.text, speciality_selector.layout_stack.choice)
 
+    Label:
+        id: confirm
+        text: root.confirm_text
+        size_hint: 1, None
+        height: 0
 

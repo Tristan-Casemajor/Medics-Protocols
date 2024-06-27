@@ -2,6 +2,7 @@
 
 <AddMindMapLayout>:
     preview_image: preview_image
+    confirm_label: confirm
     orientation: "vertical"
     padding: app.spacing_padding
     spacing: app.spacing_padding
@@ -31,6 +32,18 @@
         width: dp(160)
         pos_hint: {"center_x":0.5}
 
+    BoxLayout:
+        size_hint: None, None
+        pos_hint: {"center_x": 0.5}
+        size: dp(380), dp(27)
+        Label:
+            text: "Nom de l'algorithme : "
+        TextInput:
+            size_hint: 1.8, 1
+            id: sheet_name
+            cursor_color: 0, 0, 0, 1
+            multiline: False
+
     Button:
         background_normal: ''
         background_color: 0.22, 0.839, 0.15, 1
@@ -38,4 +51,10 @@
         size_hint: None, None
         size: root.width/6, root.height/12
         pos_hint: {"center_x": 0.5}
-        on_press: root.save_mind_map(preview_image.source, speciality_selector.layout_stack.choice)
+        on_press: root.save_mind_map(preview_image.source, speciality_selector.layout_stack.choice, sheet_name.text)
+
+    Label:
+        id: confirm
+        text: root.confirm_text
+        size_hint: 1, None
+        height: 0

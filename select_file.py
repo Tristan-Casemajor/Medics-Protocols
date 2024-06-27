@@ -37,4 +37,6 @@ class SelectFileLayout(BoxLayout):
         else:
             if split_path[1].lower() in [".png", ".jpg", ".gif", ".jpeg", ".ico"]:
                 self.current_app.main_screen_manager.get_screen("AddMindMap").layout.preview_image.source = path[0]
-                self.current_app.main_screen_manager.pop_screen()
+            elif split_path[1].lower() == ".txt":
+                self.current_app.main_screen_manager.get_screen("AddSheet").layout.read_text_file(path[0])
+            self.current_app.main_screen_manager.pop_screen()

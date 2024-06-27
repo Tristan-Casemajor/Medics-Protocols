@@ -22,7 +22,7 @@ class NavigationScreenManager(ScreenManager):
             self.current_app.main_screen_manager.get_screen("SheetViewer").sheet_viewer.viewer_label.update_text(path_to_file)
 
         elif path_to_file and extension in [".jpg", ".gif", ".jpeg", ".ico", ".png"]:
-            self.current_app.main_screen_manager.get_screen("MindMapViewer")
+            self.current_app.main_screen_manager.get_screen("MindMapViewer").scatter_mind_map.image_path = path_to_file
 
 
     def pop_screen(self):

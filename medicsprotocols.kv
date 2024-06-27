@@ -5,6 +5,7 @@
 #:import select_file select_file
 #:import catalog catalog
 #:import sheet_viewer sheet_viewer
+#:import mind_map_viewer mind_map_viewer
 
 <MainScreenManager>:
     Screen:
@@ -44,7 +45,10 @@
 
     MindMapViewerScreen:
         name: "MindMapViewer"
+        scatter_mind_map: scatter_mind_map
         BoxLayoutActionBar:
+            ScatterMindMap:
+                id: scatter_mind_map
 
     Screen:
         name: "SelectFile"

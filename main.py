@@ -32,7 +32,8 @@ class CatalogScreen(Screen):
 
 
 class MindMapViewerScreen(Screen):
-    pass
+    scatter_mind_map = ObjectProperty(None)
+
 
 class MedicsProtocols(App):
     spacing_padding = NumericProperty(dp(10))

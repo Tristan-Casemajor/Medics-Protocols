@@ -1,0 +1,18 @@
+
+
+<ScatterMindMap>:
+    id: container
+    canvas.before:
+        Color:
+            rgba: app.menu_background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Scatter:
+        do_translation: True
+        do_rotation: False
+        Image:
+            source: root.image_path
+            size: dp(400), dp(400)
+            pos: container.center_x-self.width/2, container.center_y-self.height/2
+

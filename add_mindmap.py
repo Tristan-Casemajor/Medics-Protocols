@@ -14,3 +14,4 @@ class AddMindMapLayout(BoxLayout):
     def save_mind_map(self, source, destination):
         if source != "images/icon.png" and os.path.exists(source):
             shutil.copy2(source, destination)
+            print(os.listdir("choices/cardiologie"))

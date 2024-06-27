@@ -1,0 +1,56 @@
+#:import specialty_selector specialty_selector
+
+
+<AddSheetLayout>:
+    orientation: "vertical"
+    padding: app.spacing_padding
+    spacing: app.spacing_padding
+    canvas.before:
+        Color:
+            rgba: app.menu_background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: 0.139, 0.207, 0.218, 1
+        Rectangle:
+            pos: 0, self.height/1.215
+            size: self.width, dp(5)
+    Label:
+        size_hint: 1, None
+        height: root.height/23
+        text: "Choissisez vôtre fiche : "
+
+    Button:
+        text: "Parcourir"
+        size_hint: None, None
+        size: root.width/5.5, root.height/13
+        pos_hint: {"center_x": 0.5}
+        on_press: app.main_screen_manager.push_screen("SelectFile")
+
+    Label:
+        size_hint: 1, None
+        height: root.height/23
+        text: "Entrer la fiche manuellement : "
+
+    TextInput:
+        size_hint: 0.6, None
+        pos_hint: {"center_x": 0.5}
+        height: dp(250)
+        cursor_color: 0, 0, 0, 1
+
+    SpecialitySelector:
+        id: speciality_selector
+        size_hint: None, 0.3
+        width: dp(160)
+        pos_hint: {"center_x":0.5}
+
+    Button:
+        background_normal: ''
+        background_color: 0.22, 0.839, 0.15, 1
+        text: "Ajouter"
+        size_hint: None, None
+        size: root.width/6, root.height/12
+        pos_hint: {"center_x": 0.5}
+
+

@@ -1,18 +1,19 @@
 #:import menu menu
 #:import boxlayout_actionbar boxlayout_actionbar
 #:import add_mindmap add_mindmap
+#:import add_sheet add_sheet
 #:import select_file select_file
 
 
 <MainScreenManager>:
     Screen:
         name: "Menu"
-        
         Menu:
 
     Screen:
         name: "AddSheet"
         BoxLayoutActionBar:
+            AddSheetLayout:
 
     ScreenObjectProperty:
         layout: add_mind_map_layout

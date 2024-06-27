@@ -1,7 +1,11 @@
 from kivy import Config
+from kivy import platform
+if platform in ["android", "ios"]:
+    Config.set('input', 'default', 'mtdev,/dev/input/event0,en-us')
+    Config.set('input', 'mouse', 'mouse,disable_multitouch')
+else:
+    Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 from kivy.uix.screenmanager import Screen
-
-Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 import os
 from kivy.app import App
 from kivy.metrics import dp

@@ -1,11 +1,42 @@
+<ButtonWithImageAtCenter>:
+    image_source: self.image_source
+    size_hint: None, None
+    size: dp(47), dp(40)
+    canvas:
+        Rectangle:
+            size: self.width-dp(10), self.height-dp(10)
+            pos: self.center_x-(self.width-dp(10))/2, self.center_y-(self.height-dp(10))/2
+            source: self.image_source
+
 <BoxLayoutActionBar>:
     orientation: "vertical"
-    ActionBar:
-        ActionView:
-            ActionPrevious:
-                font_name: "fonts/seguiemj.ttf"
-                on_release: app.main_screen_manager.pop_screen()
-                app_icon: "images/icon.png"
-                app_icon_height: dp(45)
-                app_icon_width: dp(37)
-                #title: "\U0001FAC0"
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 0.345, 0.345, 0.345, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        size_hint: 1, None
+        height: dp(40)
+        ButtonWithImageAtCenter:
+            image_source: "images/back_image.png"
+            on_press: app.main_screen_manager.pop_screen()
+            background_color: 0.345, 0.345, 0.345, 1
+            background_normal: ''
+            size_hint: None, None
+            size: dp(40), dp(40)
+        Image:
+            size_hint: None, None
+            size: dp(37), dp(45)
+            source: "images/icon.png"
+    #ActionBar:
+        #ActionView:
+            #ActionPrevious:
+                #font_name: "fonts/seguiemj.ttf"
+                #on_release: app.main_screen_manager.pop_screen()
+                #app_icon: "images/icon.png"
+                #app_icon_height: dp(45)
+                #app_icon_width: dp(37)
+                #debounce_time: 0.8
+

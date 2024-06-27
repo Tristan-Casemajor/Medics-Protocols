@@ -26,11 +26,27 @@ class CatalogLayout(BoxLayout):
             file_name = self.return_name_without_extension(i)
             file_extention = os.path.splitext(i)
             path_to_file = os.path.join("choices", dir_name, i)
+
+            if file_extention[1] == ".txt":
+                function = partial(self.current_app.main_screen_manager.push_screen,
+                                   "SheetViewer",
+                                   path_to_file=path_to_file,
+                                   extension=file_extention[1])
+
+            elif file_extention[1] in [".jpg", ".gif", ".jpeg", ".ico", ".png"]:
+                function = partial(self.current_app.main_screen_manager.push_screen,
+                                   "MindMapViewer",
+                                   path_to_file=path_to_file,
+                                   extension=file_extention[1])
+            else:
+                function = partial(print, "bad formats")
+
             widget = Button(text=file_name,
                             size_hint=(0.45, None),
                             height=dp(35),
                             pos_hint={"center_x": 0.5},
-                            on_press=partial(self.current_app.main_screen_manager.push_screen, "SheetViewer", path_to_file=path_to_file))
+                            on_press=function)
+
             self.add_widget(widget)
             self.widgets.append(widget)
 

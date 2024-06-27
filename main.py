@@ -31,6 +31,9 @@ class CatalogScreen(Screen):
     scroll = ObjectProperty(None)
 
 
+class MindMapViewerScreen(Screen):
+    pass
+
 class MedicsProtocols(App):
     spacing_padding = NumericProperty(dp(10))
     menu_background = ColorProperty((0.206, 0.238, 0.246, 1))

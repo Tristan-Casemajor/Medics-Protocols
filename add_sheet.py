@@ -1,4 +1,6 @@
 import os
+
+from kivy.graphics import Color, Rectangle
 from kivy.properties import Clock
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty, StringProperty
@@ -11,6 +13,20 @@ class AddSheetLayout(BoxLayout):
     text_input_sheet = ObjectProperty(None)
     confirm_label = ObjectProperty(None)
     confirm_text = StringProperty("")
+    browse_button = ObjectProperty(None)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        with self.canvas:
+            Color(rgba=(0.139, 0.207, 0.218, 1))
+            self.separator = Rectangle(pos=(0, self.height/1.215), size=(self.width, dp(5)))
+        Clock.schedule_interval(self.set_size, 1/30)
+
+
+    def set_size(self, *args):
+        self.separator.pos = 0, self.browse_button.pos[1]-dp(11)
+        self.separator.size = self.width, dp(5)
+
     def read_text_file(self, path):
         try:
             file = open(path, "r", encoding="utf8")

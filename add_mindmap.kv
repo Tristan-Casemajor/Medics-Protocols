@@ -29,17 +29,17 @@
     SpecialitySelector:
         id: speciality_selector
         size_hint: None, 0.3
-        width: dp(160)
+        width: app.speciality_selector_width
         pos_hint: {"center_x":0.5}
 
     BoxLayout:
         size_hint: None, None
         pos_hint: {"center_x": 0.5}
-        size: dp(380), dp(27)
+        size: dp(390), dp(27)
         Label:
             text: "Nom de l'algorithme : "
         TextInput:
-            size_hint: 1.8, 1
+            size_hint: 1.55, 1
             id: sheet_name
             cursor_color: 0, 0, 0, 1
             multiline: False

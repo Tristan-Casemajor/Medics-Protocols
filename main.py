@@ -39,6 +39,7 @@ class MedicsProtocols(App):
     spacing_padding = NumericProperty(dp(10))
     menu_background = ColorProperty((0.206, 0.238, 0.246, 1))
     main_screen_manager = ObjectProperty(None)
+    speciality_selector_width = dp(175)
     app_folders = (os.path.join("choices", "cardiologie"),
                    os.path.join("choices", "pneumologie"),
                    os.path.join("choices", "echographie"),

@@ -7,23 +7,21 @@
     spacing: app.spacing_padding
     text_input_sheet: text_input_sheet
     confirm_label: confirm
+    browse_button: browse_button
     canvas.before:
         Color:
             rgba: app.menu_background
         Rectangle:
             pos: self.pos
             size: self.size
-        Color:
-            rgba: 0.139, 0.207, 0.218, 1
-        Rectangle:
-            pos: 0, self.height/1.215
-            size: self.width, dp(5)
+
     Label:
         size_hint: 1, None
         height: root.height/23
         text: "Choissisez vôtre fiche : "
 
     Button:
+        id: browse_button
         text: "Parcourir"
         size_hint: None, None
         size: root.width/5.5, root.height/13
@@ -44,17 +42,17 @@
     SpecialitySelector:
         id: speciality_selector
         size_hint: None, 0.3
-        width: dp(160)
+        width: app.speciality_selector_width
         pos_hint: {"center_x":0.5}
 
     BoxLayout:
         size_hint: None, None
         pos_hint: {"center_x": 0.5}
-        size: dp(300), dp(27)
+        size: dp(310), dp(27)
         Label:
             text: "Nom de la fiche : "
         TextInput:
-            size_hint: 1.8, 1
+            size_hint: 1.6, 1
             id: sheet_name
             cursor_color: 0, 0, 0, 1
             multiline: False

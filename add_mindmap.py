@@ -5,12 +5,15 @@ from kivy.metrics import dp
 from kivy.properties import StringProperty, ObjectProperty, Clock
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.image import Image
-
+from kivy import platform
 Builder.load_file("add_mindmap.kv")
 
 
 class PreviewImage(Image):
-    pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        if platform in ["android", "ios"]:
+            self.size_hint = 1, 0.4
 
 
 class AddMindMapLayout(BoxLayout):

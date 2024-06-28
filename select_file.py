@@ -13,6 +13,9 @@ Builder.load_file("select_file.kv")
 class FileSelector(FileChooserIconView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.manage_path()
+
+    def manage_path(self):
         if platform == "android":
             request_permissions([Permission.INTERNET,
                                 Permission.READ_EXTERNAL_STORAGE,
@@ -26,9 +29,13 @@ class FileSelector(FileChooserIconView):
         elif platform == "win":
             self.path = os.path.expanduser("~/Downloads")
 
+    def reset_path(self):
+        self.manage_path()
+
 
 class SelectFileLayout(BoxLayout):
     current_app = ObjectProperty(None)
+
     def set_image(self, path):
         try:
             split_path = os.path.splitext(path[0])

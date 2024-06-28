@@ -13,13 +13,13 @@
         id: file_chooser
     Button:
         size_hint: None, None
-        size: root.width/4, root.height/12
+        size: root.width/4 if root.width/4 > dp(176)/1.5 else dp(176)/1.5 , root.height/12
         text: "séléctionner"
         on_press: root.set_image(file_chooser.selection)
         pos_hint: {"center_x": 0.5}
     Button:
         size_hint: None, None
-        size: root.width/4 if root.width/4 > dp(176) else dp(176) , root.height/12
+        size: root.width/4 if root.width/4 > dp(176)/1.5 else dp(176)/1.5 , root.height/12
         text: "reset explorateur"
         on_press: file_chooser.reset_path()
         pos_hint: {"center_x": 0.5}
